@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaliação de Assertividade — Rotas da Liderança</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <div class="tag">Rotas da Liderança · SEBRAE</div>
+            <h1>Avaliação de<br><span>Assertividade</span></h1>
+            <p class="subtitle">Responda com honestidade para refletir sobre seu comportamento real.</p>
+        </header>
+
+        <div id="quiz-section">
+            <div class="email-section">
+                <label for="user_email">Para receber seu resultado por e-mail:</label>
+                <input type="email" id="user_email" placeholder="seu-email@exemplo.com" required>
+            </div>
+
+            <div class="progress-wrap">
+                <div class="progress-meta">
+                    <span id="progress-text">0 de 36 respondidas</span>
+                    <span id="progress-pct">0%</span>
+                </div>
+                <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+            </div>
+
+            <div id="questions-list"></div>
+
+            <div class="actions">
+                <button class="btn-calc" id="calc-btn">Calcular e Enviar Resultado</button>
+                <div class="error-msg" id="error-msg">⚠️ Preencha seu e-mail e responda todas as questões.</div>
+            </div>
+        </div>
+
+        <div id="result-panel">
+            <div id="result-container"></div>
+            <div class="actions">
+                <button class="btn-reset" onclick="location.reload()">↺ Refazer o questionário</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
