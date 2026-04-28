@@ -124,32 +124,59 @@ calcBtn.onclick = () => {
   }
 
   const total = answers.reduce((s, a, i) => s + scoring[i][a], 0);
-  let level = "";
-  if (total <= 36) level = "Baixa Assertividade";
-  else if (total <= 72) level = "Média Assertividade";
-  else if (total <= 85) level = "Boa Assertividade";
-  else level = "Excelente Assertividade";
 
+  // LÓGICA DE RESULTADOS DETALHADOS
+  let level, badge, title, desc;
+
+  if (total <= 36) {
+    badge = "Baixa Assertividade";
+    title = "Comportamento Defensivo";
+    desc =
+      "Você está usando o comportamento defensivo com muita intensidade. Nas situações difíceis, tende a se recolher ou reagir de forma pouco equilibrada. Com prática e autoconhecimento, é possível desenvolver uma comunicação mais assertiva.";
+  } else if (total <= 72) {
+    badge = "Média Assertividade";
+    title = "Em Desenvolvimento";
+    desc =
+      "É provável que nas situações mais difíceis, nas quais se sente ameaçado, você esteja se armando e se defendendo com passividade ou agressividade. Em situações menos ameaçadoras, você tem conseguido ser assertivo.";
+  } else if (total <= 85) {
+    badge = "Boa Assertividade";
+    title = "Comunicação Positiva";
+    desc =
+      "Na maioria das vezes, você tem se afirmado positivamente. Sabe defender seus direitos sem desrespeitar os dos outros. Continue aprimorando suas habilidades de comunicação para alcançar a excelência.";
+  } else {
+    badge = "Excelente Assertividade";
+    title = "Comunicação Exemplar";
+    desc =
+      "Na sua percepção, você negocia bem os seus direitos e respeita os dos outros. Sua comunicação é equilibrada, firme e respeitosa — uma referência de liderança assertiva.";
+  }
+
+  // ATUALIZAÇÃO DA TELA
   document.getElementById("quiz-section").style.display = "none";
   document.getElementById("result-panel").style.display = "block";
+
   document.getElementById("result-container").innerHTML = `
         <div class="score-circle">${total}</div>
-        <h2>${level}</h2>
-        <p style="margin: 20px 0; color: var(--muted)">Obrigado por participar! Um relatório foi enviado para seu e-mail.</p>`;
+        <h2 style="color: var(--primary); margin-top: 10px;">${badge}</h2>
+        <h3 style="margin-bottom: 15px;">${title}</h3>
+        <p style="line-height: 1.6; margin-bottom: 20px;">${desc}</p>
+        <p style="font-weight: bold; color: #2ecc71;">Um relatório detalhado foi enviado para: ${email}</p>
+  `;
 
-  // ENVIO DE E-MAIL (Substitua os IDs)
+  // ENVIO DE E-MAIL
   emailjs
     .send("service_qqmgnvv", "template_8az22nj", {
       to_email: email,
       score: total,
-      level: level,
+      level: badge,
+      title: title,
+      description: desc,
     })
     .then(
       function (response) {
-        console.log("Sucesso!", response.status, response.text);
+        console.log("E-mail enviado com sucesso!", response.status);
       },
       function (error) {
-        console.log("Falha...", error);
+        console.log("Falha no envio do e-mail...", error);
       },
     );
 };
