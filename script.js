@@ -139,7 +139,7 @@ calcBtn.onclick = () => {
 
   // ENVIO DE E-MAIL (Substitua os IDs)
   emailjs
-    .send("service_njtss3e", "template_8az22nj", {
+    .send("service_qqmgnvv", "template_8az22nj", {
       to_email: email,
       score: total,
       level: level,
