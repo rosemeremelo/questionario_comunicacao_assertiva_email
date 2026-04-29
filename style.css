@@ -33,7 +33,7 @@ h1 span { color: var(--gold); }
 .q-header { display: flex; gap: 15px; margin-bottom: 15px; }
 .q-num { background: rgba(201,168,76,.1); color: var(--gold); width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; border-radius: 5px; font-weight: bold; }
 
-.options { display: flex; gap: 10px; flex-wrap: wrap; }
+.options { display: flex; gap: 10px; flex-direction: column; }
 .opt-btn { flex: 1; padding: 12px; border-radius: 8px; border: 1px solid var(--border); background: var(--surface2); color: var(--muted); cursor: pointer; transition: 0.2s; }
 .opt-btn:hover { border-color: var(--gold); }
 .opt-btn.selected-qs { background: rgba(74,158,255,.1); border-color: var(--qs); color: var(--qs); }
@@ -46,3 +46,30 @@ h1 span { color: var(--gold); }
 .error-msg { color: #ff6b6b; margin-top: 15px; display: none; }
 #result-panel { display: none; text-align: center; }
 .score-circle { width: 100px; height: 100px; border: 3px solid var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 30px; font-weight: bold; color: var(--gold); }
+
+/* Centraliza o conteúdo dentro da área de ações */
+.actions {
+    display: flex;
+    flex-direction: column; /* Garante que botão e msg de erro fiquem um abaixo do outro */
+    align-items: center;    /* Centraliza na horizontal */
+    justify-content: center; /* Centraliza na vertical (se necessário) */
+    margin-top: 30px;        /* Dá um espaço do fim das questões */
+}
+
+.btn-reset {
+    background: transparent;      /* Fundo transparente */
+    color: var(--muted);          /* Cor de texto mais discreta */
+    border: 1px solid var(--border); /* Bordinha discreta */
+    padding: 12px 30px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s;
+    margin-top: 20px;
+}
+
+.btn-reset:hover {
+    border-color: var(--gold);    /* Brilha em dourado no hover */
+    color: var(--gold);
+    background: rgba(201, 168, 76, 0.05); /* Um leve fundo dourado */
+}
