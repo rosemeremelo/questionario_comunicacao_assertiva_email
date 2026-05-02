@@ -92,9 +92,9 @@ function init() {
     div.innerHTML = `
             <div class="q-header"><div class="q-num">${i + 1}</div><p>${q}</p></div>
             <div class="options">
-                <button onclick="setAns(${i},0)" id="b-${i}-0" class="opt-btn">Quase Sempre</button>
-                <button onclick="setAns(${i},1)" id="b-${i}-1" class="opt-btn">Com Frequência</button>
-                <button onclick="setAns(${i},2)" id="b-${i}-2" class="opt-btn">Raramente</button>
+                <button onclick="setAns(${i},0)" id="b-${i}-0" class="opt-btn">Raramente</button>
+                <button onclick="setAns(${i},1)" id="b-${i}-1" class="opt-btn">Quase Sempre</button>
+                <button onclick="setAns(${i},2)" id="b-${i}-2" class="opt-btn">Com Frequência</button>  
             </div>`;
     qList.appendChild(div);
   });
