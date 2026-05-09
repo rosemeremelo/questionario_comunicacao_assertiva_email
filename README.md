@@ -1,6 +1,7 @@
-# 🚀 Avaliação de Assertividade — Rotas da Liderança
+# 🚀 Avaliação de Assertividade — Autoconhecimento
 
-Este projeto é uma ferramenta interativa de autodesenvolvimento desenvolvida para o programa **Rotas da Liderança (SEBRAE)**. 
+
+Este projeto é uma ferramenta interativa de autodesenvolvimento desenvolvida para o programa **AUTOCONHECIMENTO**. 
 O aplicativo permite que líderes e aspirantes avaliem seu nível de assertividade através de um questionário de 36 perguntas, 
 com envio automático de resultados detalhados por e-mail.
 
